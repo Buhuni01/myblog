@@ -28,6 +28,13 @@ A full-stack blog application that allows users to create, read, update, and del
   - Clean and modern UI
   - Bootstrap-enhanced styling
 
+  ## ✨ Additional Features
+
+- **SweetAlert2 Integration**
+  - Beautiful, responsive popup alerts
+  - Enhanced user experience for success/error messages
+  - Confirmation dialogs for delete operations
+
 ## 🛠️ Technologies Used
 
 - **Frontend:**
@@ -36,6 +43,8 @@ A full-stack blog application that allows users to create, read, update, and del
   - Bootstrap (CSS Framework)
   - JavaScript (ES6)
   - AJAX for asynchronous operations
+  - SweetAlert2 for beautiful alert popups
+ 
 
 - **Backend:**
   - PHP
@@ -198,9 +207,15 @@ myblog/
 
 ## 🌐 Hosting
 
-This application is hosted on [Your Hosting Platform]. You can access the live version at:
+This application is hosted on **InfinityFree** [https://www.infinityfree.com/]  You can access the live version at:
 
-**Live URL:** [Your hosted URL here]
+**Live URL:** [https://myblog-bl.infinityfreeapp.com]
+
+### Hosting Platform Features:
+- Free PHP & MySQL hosting
+- 5GB storage
+- Unlimited bandwidth
+- cPanel control panel
 
 ### Hosting Instructions
 
@@ -211,6 +226,16 @@ To host on a free platform like InfinityFree or 000WebHost:
 3. Import the database on your hosting control panel
 4. Update the `.env` file with your hosting database credentials
 5. Ensure all file permissions are set correctly
+
+## 🌐 Live Demo
+
+**Visit the hosted version:** [https://myblog-bl.infinityfreeapp.com]
+
+No installation required! You can:
+- Read the blogs without sign up
+- Register a new account and sign in
+- Create and manage blog posts
+- Test all features online
 
 ## 🤝 Contributing
 
