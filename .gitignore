@@ -1,0 +1,50 @@
+# Environment Variables
+.env
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+error_log
+debug.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Upload directories (if you have user uploads)
+uploads/*
+!uploads/.gitkeep
+
+# Database backups
+*.sql
+*.sql.gz
+*.sql.zip
+
+# Composer (if you use it)
+vendor/
+composer.lock
+
+# Node modules (if you add npm later)
+node_modules/
+package-lock.json
+
+# OS generated files
+Thumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# PHP specific
+*.cache
+.phpunit.result.cache

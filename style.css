@@ -1,0 +1,393 @@
+/* style.css - black/gold theme */
+
+:root {
+  --gold: #ffc107;
+  --dark: #212529;
+  --muted: #6c757d;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+main { flex: 1; }
+footer { flex-shrink: 0; }
+
+/* Base layout */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  display: flex;
+  flex-direction: column;
+}
+
+
+main {
+  flex: 1 0 auto;
+  padding-bottom: 2.5rem;
+}
+
+.container {
+  max-width: 1150px;
+}
+
+
+/* Footer always at the bottom */
+footer {
+  flex-shrink: 0; 
+  background-color: #212529;
+  color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+}
+
+
+/* Navbar */
+.navbar {
+  background: var(--dark) !important;
+}
+
+.navbar .nav-link {
+  color: #e9ecef !important;
+}
+
+.navbar .btn-warning {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+/* Auth Card */
+.auth-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, .08);
+}
+
+.auth-card h3 {
+  color: #212529;
+  margin-bottom: 1rem;
+}
+
+/* Blog card */
+.blog-card {
+  border-radius: 12px;
+  padding: 1.2rem;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+}
+
+.blog-card h5 a {
+  color: #111;
+  text-decoration: none;
+}
+
+.blog-card p.meta {
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+/* Buttons */
+.btn-gold {
+  background: var(--gold);
+  color: #111;
+  border: none;
+}
+
+.btn-outline-gold {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+}
+
+/* Footer */
+footer {
+  background: var(--dark);
+  color: #e9ecef;
+}
+
+/* form focus */
+.form-control:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 .2rem rgba(255, 193, 7, .15);
+}
+
+/* responsive adjustments */
+@media (max-width:768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .auth-card {
+    padding: 1.4rem;
+  }
+}
+
+/* Responsive and aligned dashboard layout fix */
+.post-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.post-card .title {
+  flex: 1 1 60%;
+  font-weight: 600;
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.post-card small {
+  color: #777;
+  display: block;
+  font-size: 0.85rem;
+}
+
+.post-card .actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  justify-content: flex-end;
+}
+
+.post-card .btn {
+  padding: 4px 10px;
+}
+
+/* On small screens: stack items */
+@media (max-width: 600px) {
+  .post-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .post-card .actions {
+    justify-content: flex-start;
+    margin-top: 8px;
+  }
+
+  .post-card .title {
+    white-space: normal;
+  }
+}
+
+.custom-register-btn {
+  color: black !important;
+}
+
+/* --- Embossed Blog Card Look --- */
+.blog-card, .dashboard-post {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-card:hover, .dashboard-post:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.3);
+}
+
+
+/* --- Sticky Footer for Auth Pages --- */
+.auth-page {
+  min-height: 100vh;               /* full screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 30px;
+  margin: auto;
+}
+
+/* Small footer only for auth pages */
+.auth-footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-top: auto;                /* push footer to bottom */
+  padding: 15px 0;
+}
+
+/* Prevent footer from jumping up after post deletion */
+body:not(.auth-page) {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body:not(.auth-page) main {
+  flex: 1;
+}
+
+
+/* --- Scoped stylish view post card (safe, non-invasive) --- */
+.view-post-card {
+  border-radius: 14px !important;
+  border: 1px solid rgba(0,0,0,0.06) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%) !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  overflow: hidden;
+}
+
+/* small inner padding tweak keeps existing spacing */
+.view-post-card > * {
+  z-index: 1;
+}
+
+
+
+/* hover lift — only transform the card, not its children layout */
+.view-post-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  border-color: rgba(0,0,0,0.08);
+}
+
+/* Title styling inside the scoped card (non-invasive) */
+.view-post-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+  color: #1f2428;
+}
+
+/* meta and content style — scoped and safe */
+.view-post-card .post-meta {
+  color: #6c757d;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+/* content area */
+.view-post-card #rendered {
+  color: #333;
+  line-height: 1.75;
+  margin-top: 0.75rem;
+}
+
+/* images inside content fit nicely */
+.view-post-card #rendered img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+/* actions area keep spacing and responsive wrap */
+.view-post-card .post-actions {
+  margin-top: 1.4rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+/* responsive smaller padding on very small screens */
+@media (max-width: 480px){
+  .view-post-card { padding: 1rem !important; }
+  .view-post-card::before { height: 3px; }
+}
+
+/* --- Equal Height Blog Cards --- */
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* let cards stretch evenly */
+  min-height: 320px; /* ensures a uniform base height */
+}
+
+.blog-card h5 {
+  min-height: 3rem; /* keeps title area consistent */
+  overflow: hidden;
+}
+
+.blog-card p.meta {
+  min-height: 1.2rem; /* ensures author/date line doesn't collapse */
+}
+
+.blog-card p {
+  flex-grow: 1; /* makes description area stretch evenly */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.blog-card .d-flex {
+  margin-top: auto; /* keeps buttons aligned at bottom */
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+
+/* --- Readable Blog Card Typography --- */
+.blog-card {
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  color: #2b2b2b; /* softer than pure black for comfort */
+}
+
+.blog-card h5 a {
+  font-size: 1.25rem; /* clear, readable size */
+  font-weight: 600;
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.blog-card h5 a:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
+.blog-card p.meta {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.blog-card p {
+  font-size: 1rem;
+  color: #343a40;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* Ensure buttons stand out but not overpower */
+.blog-card .btn {
+  font-size: 0.9rem;
+  border-radius: 8px;
+}
+.blog-card {
+  padding: 1.5rem;
+  background: #f9f8f6; /* very light warm tone for comfort */
+}
+
+.blog-area {
+  font-family: 'Open Sans', Arial, sans-serif;
+}

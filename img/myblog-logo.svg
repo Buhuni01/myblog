@@ -1,0 +1,16 @@
+<svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle for the icon -->
+  <circle cx="30" cy="30" r="22" fill="#D4AF37" opacity="0.15"/>
+  
+  <!-- Stylized pencil/pen icon in gold -->
+  <g transform="translate(18, 18)">
+    <path d="M8 2 L2 8 L10 16 L16 10 Z" fill="#D4AF37"/>
+    <path d="M2 8 L0 14 L6 12 Z" fill="#B8941E"/>
+    <rect x="10" y="10" width="8" height="2" fill="#D4AF37" transform="rotate(45 14 11)"/>
+  </g>
+  
+  <!-- Text: MyBlog -->
+  <text x="60" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#000000">
+    My<tspan fill="#D4AF37">Blog</tspan>
+  </text>
+</svg>
